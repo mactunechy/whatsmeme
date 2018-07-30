@@ -1,0 +1,12 @@
+{%  extends 'whatsmeme/index.html' %}
+{% block precontent %}
+{{post.title}}
+{{post.user.username}}
+{% endblock %}
+{% block content %}
+{{post.title}}
+<img src = "{{object.meme.url}}" >
+	
+{% endblock %}
+{% block postcontent %}
+{% endblock %}

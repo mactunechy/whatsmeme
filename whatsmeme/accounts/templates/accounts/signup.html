@@ -1,0 +1,17 @@
+{% extends 'whatsmeme/index.html' %} {% load crispy_forms_tags %} {% load font_awesome %}{% fa_css %}{% block forms %}
+<div class="container">
+    <div class="row  signup justify-content-center">
+        <div class=" mt-4 mb-4 col-md-8 text-center">
+                    <h2 class="brand" id="">{% fa 'fa-comments' %} what'sMEME</h2>
+                    <div class="card">
+            <h1 class="tex-cente "> Signup</h1>
+            <form method="POST">
+                {% csrf_token %} {{form|crispy}}
+                <input value="signup" type="submit" class="btn btn-success btn-block">
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

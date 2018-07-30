@@ -1,0 +1,29 @@
+{% extends 'whatsmeme/index.html' %} {% load font_awesome %} {% fa_css %} {% block precontent %} {% endblock %} {% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            {% for post in post_list%}
+            <div id="meme-card" class="card mt-4">
+                <div class="profile mt-2 ml-2 p-2">{{post.user.username}}</div>
+                <hr>
+                <p class=" mr-3 pl-3 " >{{post.title}}</p>
+                <img src="{{post.meme.url}}" alt="">
+                <div class="p-2">{%fa 'fa-calendar' %}&nbsp;{{post.created_at|date:"D M Y"}} &nbsp;&nbsp;{% fa 'fa-clock-o' %} posted {{post.created_at|timesince}} ago</div>
+                <hr>
+                <div class="container">
+                <div class="row pb-3 pl-5">
+                    
+                    <div class=" col-sm-4"> {% fa 'fa-heart' %} </div>
+                    <div class="  col-sm-4"> {% fa 'fa-comment' %}</div>
+                    <div class="col-sm-4 ">{% fa 'fa-share' %}</div>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block postcontent %} {% endblock %}
